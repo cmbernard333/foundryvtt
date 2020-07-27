@@ -2,11 +2,10 @@
 set -Eeuo pipefail
 
 NODE="/usr/bin/node"
-FOUNDRYVTT_HOME=${FOUNDRYVTT_HOME:/home/foundryvtt}
 FOUNDRYVTT_BIN=${FOUNDRYVTT_HOME}/foundrybin
 FOUNDRYVTT_DATA=${FOUNDRYVTT_HOME}/foundrydata
-FOUNDRYVTT_URL=${FOUNDRYVTT_URL:""}
-FOUNDRYVTT_OPTS=${FOUNDRYVTT_OPTS} ./resources/app/main.js --dataPath=${FOUNDRYVTT_DATA}
+FOUNDRYVTT_URL="${FOUNDRYVTT_URL}"
+FOUNDRYVTT_OPTS="${FOUNDRYVTT_OPTS} ./resources/app/main.js --dataPath=${FOUNDRYVTT_DATA}"
 
 # check for URL
 test -n "${FOUNDRYVTT_URL}" || (echo "FOUNDRYVTT_URL not set" && false)
