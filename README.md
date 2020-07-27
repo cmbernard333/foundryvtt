@@ -25,7 +25,7 @@ This container exposes two ports:
 $ docker run --name foundryvtt -d \
     -p 30000:30000/tcp \
     beardfish/foundryvtt
-```  
+```
 
 ---
 
@@ -35,3 +35,4 @@ $ docker run --name foundryvtt -d \
 [ ] Expose Foundry VTT certs directory
 [ ] Better runtime support for Foundry VTT temporary URLs
 [ ] Publish official image to docker hub
+[ ] Support all [Application Configuration Options](https://foundryvtt.com/article/configuration/)

@@ -2,7 +2,9 @@
 set -e
 
 NODE="/usr/bin/node"
-FOUNDRY_HOME=${FOUNDRY_HOME:/home/foundryvtt}
+FOUNDRYVTT_HOME=${FOUNDRY_HOME:/home/foundryvtt}
+FOUNDRYVTT_URL=${FOUNDRYVTT_URL:""}
+FOUNDRYVTT_OPTS=${FOUNDRYVTT_OPTS} ./resources/app/main.js --dataPath=$FOUNDRYVTT_HOME/foundrydata
 
 # remove the old zip
 rm -f $FOUNDRYVTT_HOME/foundryvtt.zip
@@ -15,4 +17,4 @@ unzip -d $FOUNDRYVTT_HOME/foundrybin $FOUNDRYVTT_HOME/foundryvtt.zip
 # CMD["node resources/app/main.js --dataPath=/home/foundryvtt/foundrydata"]
 cd $FOUNDRYVTT_HOME/foundrybin
 exec 0<&-
-exec ${NODE} ./resources/app/main.js --dataPath=$FOUNDRYVTT_HOME/foundrydata
+exec ${NODE} ${FOUNDRYVTT_OPTS}
