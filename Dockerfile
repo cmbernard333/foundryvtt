@@ -27,7 +27,7 @@ RUN set -x \
 
 EXPOSE 30000/tcp
 
-VOLUME ["$FOUNDRYVTT_HOME/foundrydata"]
+VOLUME ["$FOUNDRYVTT_HOME/foundrydata/Config", "$FOUNDRYVTT_HOME/foundrydata/Data", "$FOUNDRYVTT_HOME/foundrydata/Logs", "$FOUNDRVTT_HOME/foundrycert"]
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 

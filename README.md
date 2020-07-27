@@ -21,7 +21,10 @@ By default you do not need to specify any of these arguments while building.
 ## Usage
 
 This container exposes the following volume(s):
-* `$FOUNDRYVTT_HOME/foundrydata` - Foundry VTT data directory - default `/home/foundryvtt/foundrydata`
+* `$FOUNDRYVTT_HOME/foundrydata/Config` - Foundry VTT config directory - default `/home/foundryvtt/foundrydata/Config`
+* `$FOUNDRYVTT_HOME/foundrydata/Data` - Foundry VTT data directory - default `/home/foundryvtt/foundrydata/Data`
+* `$FOUNDRYVTT_HOME/foundrydata/Logs` - Foundry VTT logs directory - default `/home/foundryvtt/foundrydata/Logs`
+* `$FOUNDRVTT_HOME/foundrycert` - Foundry VTT cert directory for HTTPS - default `/home/foundryvtt/foundrycert`
 
 
 This container exposes the following port(s):
