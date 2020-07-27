@@ -11,6 +11,7 @@ ENV \
 
 # get fs
 COPY root /
+RUN chmod 0755 /usr/local/bin/docker-entrypoint.sh
 
 # install ssl for https
 RUN apt update && apt install -y libssl-dev curl sudo bash wget unzip
