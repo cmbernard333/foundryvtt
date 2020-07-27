@@ -11,11 +11,11 @@ FOUNDRYVTT_OPTS="${FOUNDRYVTT_OPTS} ./resources/app/main.js --dataPath=${FOUNDRY
 # check for URL
 test -n "${FOUNDRYVTT_URL}" || (echo "FOUNDRYVTT_URL not set" && false)
 
-# remove the old zip
-rm -f $FOUNDRYVTT_HOME/foundryvtt.zip
-
 # TODO: we want foundrydata to be mountable
 mkdir -p $FOUNDRYVTT_DATA $FOUNDRYVTT_BIN $FOUNDRYVTT_CERT
+
+# remove the old zip
+rm -f $FOUNDRYVTT_HOME/foundryvtt.zip
 wget -O $FOUNDRYVTT_HOME/foundryvtt.zip "$FOUNDRYVTT_URL"
 unzip -d $FOUNDRYVTT_BIN $FOUNDRYVTT_HOME/foundryvtt.zip
 

@@ -8,7 +8,8 @@ ARG FOUNDRYVTT_HOME="/home/$FOUNDRYVTT_USER"
 # env ars
 ENV \
     FOUNDRYVTT_OPTS= \
-    FOUNDRYVTT_HOME="$FOUNDRYVTT_HOME"
+    FOUNDRYVTT_HOME="$FOUNDRYVTT_HOME" \
+    FOUNDRYVTT_GET_LATEST=
 
 # get fs
 COPY root /
@@ -27,7 +28,7 @@ RUN set -x \
 
 EXPOSE 30000/tcp
 
-VOLUME ["$FOUNDRYVTT_HOME/foundrydata/Config", "$FOUNDRYVTT_HOME/foundrydata/Data", "$FOUNDRYVTT_HOME/foundrydata/Logs", "$FOUNDRVTT_HOME/foundrycert"]
+VOLUME ["$FOUNDRYVTT_HOME/foundrydata/Config", "$FOUNDRYVTT_HOME/foundrydata/Data", "$FOUNDRYVTT_HOME/foundrydata/Logs", "$FOUNDRYVTT_HOME/foundrycert"]
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
