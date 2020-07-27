@@ -4,15 +4,10 @@ FROM debian:stable-slim
 ARG FOUNDRYVTT_USER="foundryvtt"
 ARG FOUNDRYVTT_GROUP="foundryvtt"
 ARG FOUNDRYVTT_HOME="/home/$FOUNDRYVTT_USER"
-ARG FOUNDRYVTT_URL
 
 # env ars
 ENV \
-    FOUNDRYVTT_URL="$FOUNDRYVTT_URL" \
     FOUNDRYVTT_HOME="$FOUNDRYVTT_HOME"
-
-# check for URL
-RUN test -n "${FOUNDRYVTT_URL}" || (echo "FOUNDRYVTT_URL not set" && false)
 
 # get fs
 COPY root /

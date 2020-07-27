@@ -2,9 +2,12 @@
 set -e
 
 NODE="/usr/bin/node"
-FOUNDRYVTT_HOME=${FOUNDRY_HOME:/home/foundryvtt}
+FOUNDRYVTT_HOME=${FOUNDRYVTT_HOME:/home/$FOUNDRYVTT_USER}
 FOUNDRYVTT_URL=${FOUNDRYVTT_URL:""}
 FOUNDRYVTT_OPTS=${FOUNDRYVTT_OPTS} ./resources/app/main.js --dataPath=$FOUNDRYVTT_HOME/foundrydata
+
+# check for URL
+test -n "${FOUNDRYVTT_URL}" || (echo "FOUNDRYVTT_URL not set" && false)
 
 # remove the old zip
 rm -f $FOUNDRYVTT_HOME/foundryvtt.zip
