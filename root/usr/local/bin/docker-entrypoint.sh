@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# docker-entrypoint.sh script for Foundryctt Docker container
+# License: MIT
+# Github: https://github.com/cmbernard333/foundryvtt.git
 set -Eeuo pipefail
 
 NODE="/usr/bin/node"
